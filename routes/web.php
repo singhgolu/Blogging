@@ -18,6 +18,7 @@ Route::group(['namespace' => 'User'], function(){
 Route::group(['namespace' => 'Admin'], function(){
 	Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
 	Route::post('admin/login', 'Auth\LoginController@login');
+	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 	Route::get('admin/home', 'HomeController@index')->name('admin.home');
 	Route::resource('admin/post', 'PostController');
 	Route::resource('admin/role', 'RoleController');

@@ -15,7 +15,7 @@
         <img src="<?php echo e(asset('admin/dist/img/user2-160x160.jpg')); ?>" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Jwala Singh</a>
+        <a href="#" class="d-block"><?php echo e(Auth::user()->name); ?></a>
       </div>
     </div>
 

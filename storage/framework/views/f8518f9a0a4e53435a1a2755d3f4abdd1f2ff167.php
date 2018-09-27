@@ -112,10 +112,33 @@
         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
       </div>
     </li>
-    <!-- <li class="nav-item">
-      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
-          class="fa fa-th-large"></i></a>
-    </li> -->
+
+    <li class="dropdown user user-menu">
+      <a class="nav-link" data-toggle="dropdown" href="#"><span class="hidden-xs">Welcome <?php echo e(Auth::user()->name); ?></span></a>
+      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">
+          <i class="fa fa-envelope mr-2"></i> My Profile
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">
+          <i class="fa fa-users mr-2"></i> Change Password
+        </a>
+        <div class="dropdown-divider"></div>
+        <!-- <a href="<?php echo e(route('logout')); ?>" class="dropdown-item">
+          <i class="fa fa-file mr-2"></i> Logout
+        </a> -->
+
+        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="text-decoration: none;">
+          <i class="fa fa-file mr-2"></i>  <?php echo e(__('Logout')); ?>
+
+        </a>
+
+        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+          <?php echo csrf_field(); ?>
+        </form>
+      </div>
+    </li>
   </ul>
 </nav>
 <!-- /.navbar -->
